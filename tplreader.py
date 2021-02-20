@@ -101,8 +101,6 @@ def excel2word(excel_path, word_path, output_path):
                 c_f = table.rows[cells[0][0]-1].cells[cells[0][1]-1]
                 c_l = table.rows[cells[-1][0]-1].cells[cells[-1][1]-1]
                 c_f.merge(c_l)
-                #print(cell, cells[0], cells[-1])
-
 
     tpl.render(context)
     tpl.save(output_path)
