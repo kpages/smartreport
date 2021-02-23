@@ -110,6 +110,24 @@ def excel2word(excel_path, word_path, output_path):
 def get_tpls(output_path):
     files = os.listdir(output_path)
     return filter(lambda x: os.path.splitext(x)[1] == ".docx", files)
+
+
+def get_tpls_status(output_path):
+    # 返回报告模板文件上传状态
+    tpl_file = "tpl.docx"
+    tpl_file_config = "tpl.docx.xlsx"
+    tpl_status, config_status = False, False
+
+    if os.path.exists(f"{output_path}/{tpl_file}"):
+        tpl_status = True
+    
+    if os.path.exists(f"{output_path}/{tpl_file}"):
+        config_status = True
+    
+    return tpl_status, config_status
+
+
+
         
 
 
