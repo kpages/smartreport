@@ -10,6 +10,7 @@ line_{sheetname}_D1:D8_E,F,H
     y: "E,F,H"
 }
 """
+import os
 import re
 from docxtpl import DocxTemplate 
 from openpyxl.cell.cell import MergedCell
@@ -104,5 +105,12 @@ def excel2word(excel_path, word_path, output_path):
 
     tpl.render(context)
     tpl.save(output_path)
+
+
+def get_tpls(output_path):
+    files = os.listdir(output_path)
+    return filter(lambda x: os.path.splitext(x)[1] == ".docx", files)
+        
+
 
 
